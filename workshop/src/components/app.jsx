@@ -28,7 +28,7 @@ class App extends Component {
     giphy.search({
       q: keyword,
       rating: 'g',
-      limit: 10
+      limit: 15
     }, (err, res) => {
       this.setState({
         ids: res.data.map((gif) => gif.id)
