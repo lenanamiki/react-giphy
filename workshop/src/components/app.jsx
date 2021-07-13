@@ -31,7 +31,7 @@ class App extends Component {
       limit: 10
     }, (err, res) => {
       this.setState({
-        ids: res.data.map(gif => gif.id)
+        ids: res.data.map((gif) => gif.id)
       });
     });
   };
@@ -41,7 +41,7 @@ class App extends Component {
     return (
       <div>
         <div className="left-scene">
-          <SearchBar changeGifIds={this.changeGifIds}/>
+          <SearchBar changeGifIds={this.changeGifIds} />
           <div className="selected-gif">
             <Gif id={selectedId} />
           </div>
