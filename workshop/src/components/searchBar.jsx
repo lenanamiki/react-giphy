@@ -9,7 +9,7 @@ class SearchBar extends Component {
 
   render() {
     return (
-      <input type="text" className="form-control form-search" placeholder="Search a GIF" onChange={this.handleChange} />
+      <input type="text" className="form-search" placeholder="Search a GIF" onChange={this.handleChange} />
     );
   }
 }

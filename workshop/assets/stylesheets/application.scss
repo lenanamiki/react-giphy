@@ -1,7 +1,9 @@
 @import url('https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
 body {
-  font-family: Helvetica;
+  font-family: 'Roboto', sans-serif;
+  background-color: #121212;
 }
 
 #root > div {
@@ -24,9 +26,11 @@ body {
   flex-direction: column;
 
   .form-search {
-    padding: 60px 60px 60px 120px;
-    border: none;
-    font-size: 2.6em;
+    padding-left: 24px;
+    border: 1px solid black;
+    border-radius: 4px;
+    font-size: 32px;
+    height: 64px;
     box-shadow: none;
     &:focus {
       box-shadow: none;
@@ -34,13 +38,21 @@ body {
   }
 
   &:before {
-    content: '\F002';
+    background: linear-gradient(143deg, rgba(137,71,250,1) 0%, rgba(110,109,238,1) 35%, rgba(0,212,255,1) 100%);
+    padding: 8px 8px;
+    width: 64px;
+    height: 64px;
+    border: 1px solid black;
+    border-radius: 8px;
+    content: '\f002';
     position: absolute;
-    top: 35px;
-    left: 60px;
+    top: 24px;
+    left: 42px;
     font-family: FontAwesome;
-    font-size: 2.6em;
-    opacity: 0.4;
+    font-size: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   .selected-gif {
@@ -48,8 +60,6 @@ body {
     display: flex;
     flex-grow: 1;
     height: calc(100vh - 232px);
-    background-image: url("data:image/svg+xml,%3Csvg width='52' height='26' viewBox='0 0 52 26' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%239C92AC' fill-opacity='0.22'%3E%3Cpath d='M10 10c0-2.21-1.79-4-4-4-3.314 0-6-2.686-6-6h2c0 2.21 1.79 4 4 4 3.314 0 6 2.686 6 6 0 2.21 1.79 4 4 4 3.314 0 6 2.686 6 6 0 2.21 1.79 4 4 4v2c-3.314 0-6-2.686-6-6 0-2.21-1.79-4-4-4-3.314 0-6-2.686-6-6zm25.464-1.95l8.486 8.486-1.414 1.414-8.486-8.486 1.414-1.414z' /%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-
     .gif {
       max-width: 80%;
       max-height: 80%;
@@ -78,4 +88,12 @@ body {
 
 .clicked {
   color: red;
+}
+
+input {
+  margin-top: 24px;
+  margin-left: 112px;
+  margin-right: 45px;
+  height: 64px;
+  font-size: 24px;
 }
