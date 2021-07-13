@@ -3,11 +3,8 @@ import SearchBar from "./searchBar";
 import Gif from "./gif";
 import GifList from "./gifList";
 
+// eslint-disable-next-line react/prefer-stateless-function
 class App extends Component {
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     return (
       <div>
