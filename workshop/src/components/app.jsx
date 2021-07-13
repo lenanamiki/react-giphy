@@ -5,9 +5,22 @@ import GifList from "./gifList";
 
 // eslint-disable-next-line react/prefer-stateless-function
 class App extends Component {
+  constructor() {
+    super();
+    this.state = {
+      selectedId: "gG6OcTSRWaSis",
+      ids: ["gG6OcTSRWaSis", "13HgwGsXF0aiGY", "13UZisxBxkjPwI"]
+    };
+  }
+
+  changeSelectedGif = (newId) => {
+    this.setState({
+      selectedId: newId
+    });
+  };
+
   render() {
-    const selectedId = "gG6OcTSRWaSis";
-    const ids = ["gG6OcTSRWaSis", "13HgwGsXF0aiGY", "13UZisxBxkjPwI"];
+    const { selectedId, ids } = this.state;
     return (
       <div>
         <div className="left-scene">
@@ -17,7 +30,7 @@ class App extends Component {
           </div>
         </div>
         <div className="right-scene">
-          <GifList ids={ids} />
+          <GifList ids={ids} changeSelectedGif={this.changeSelectedGif} />
         </div>
       </div>
     );
