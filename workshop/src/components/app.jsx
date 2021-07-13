@@ -3,6 +3,12 @@ import SearchBar from "./searchBar";
 import Gif from "./gif";
 import GifList from "./gifList";
 
+// import giphy api
+const giphy = require('giphy-api')({
+  apiKey: 'KsltJNEs1v3QDDVlinP6EFo2GqjFxgRR',
+  https: true
+});
+
 // eslint-disable-next-line react/prefer-stateless-function
 class App extends Component {
   constructor() {
@@ -19,12 +25,24 @@ class App extends Component {
     });
   };
 
+  changeGifIds = (keyword) => {
+    giphy.search({
+      q: keyword,
+      rating: 'g',
+      limit: 10
+    }, (err, res) => {
+      this.setState({
+        ids: res.data.map(gif => gif.id)
+      });
+    });
+  };
+
   render() {
     const { selectedId, ids } = this.state;
     return (
       <div>
         <div className="left-scene">
-          <SearchBar />
+          <SearchBar changeGifIds={this.changeGifIds}/>
           <div className="selected-gif">
             <Gif id={selectedId} />
           </div>
