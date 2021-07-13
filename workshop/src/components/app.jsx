@@ -9,7 +9,6 @@ const giphy = require('giphy-api')({
   https: true
 });
 
-// eslint-disable-next-line react/prefer-stateless-function
 class App extends Component {
   constructor() {
     super();
